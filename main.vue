@@ -4,5 +4,5 @@ import SelectField from './src/SelectField';
 export default SelectField;
 </script>
 <style lang="postcss">
-@import "tailwindcss/components";
+@tailwind components;
 </style>
