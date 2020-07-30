@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/vue-interface/input-field/docs#readme",
   "dependencies": {
-    "@vue-interface/activity-indicator": "^0.10.1",
+    "@vue-interface/activity-indicator": "^0.10.2",
     "@vue-interface/form-control": "^0.9.2",
     "autoprefixer": "^9.8.0",
     "core-js": "^3.6.4",
