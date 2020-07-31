@@ -94,3 +94,17 @@ export default {
 
 };
 </script>
+
+<style>
+.has-activity select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* For IE10 */
+.has-activity select::-ms-expand {
+    display: none;
+}
+</style>
+
