@@ -73,6 +73,19 @@ export default {
         FormControlMixin
     ],
 
+    props: {
+        /**
+         * The default class name assigned to the control element
+         *
+         * @param {String}
+         * @default 'form-select'
+         */
+        defaultControlClass: {
+            type: String,
+            default: 'form-select'
+        }   
+    },
+
     computed: {
 
         controlClass() {
