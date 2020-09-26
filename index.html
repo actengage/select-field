@@ -121,46 +121,6 @@
 
             </div>
 
-            <hr>
-
-            <h3>Colors</h3>
-
-            <select-field value="primary" text-white bg-primary>
-                <option value="primary">Primary</option>
-            </select-field>
-
-            <select-field value="secondary" text-white bg-secondary>
-                <option value="secondary">Secondary</option>
-            </select-field>
-
-            <select-field value="success" text-white bg-success>
-                <option value="success">Success</option>
-            </select-field>
-
-            <select-field value="danger" text-white bg-danger>
-                <option value="danger">Danger</option>
-            </select-field>
-
-            <select-field value="warning" text-white bg-warning>
-                <option value="warning">Warning</option>
-            </select-field>
-
-            <select-field value="info" text-white bg-info>
-                <option value="info">Info</option>
-            </select-field>
-
-            <select-field value="dark" text-light bg-dark>
-                <option value="dark">Dark</option>
-            </select-field>
-
-            <select-field value="muted" text-dark bg-muted>
-                <option value="muted">Muted</option>
-            </select-field>
-
-            <select-field value="white" text-dark bg-white>
-                <option value="white">White</option>
-            </select-field>
-
             <h2>Activity Indicator</h2>
 
             <select-field label="Small" size="sm" :activity="showActivity">
@@ -195,6 +155,15 @@
             <select-field label="Single Inline Error" error="This is an inline error."></select-field>
 
             <select-field name="test" label="Multiple Errors From Object" :errors="{'test': ['This is an inline error #1.', 'This is an inline error #2.']}"></select-field>
+            
+            <h3>Legacy Form Control</h3>
+
+            <select-field label="Regular Field" legacy>
+                <option value="">Select an option...</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select-field>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>

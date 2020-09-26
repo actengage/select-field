@@ -51,7 +51,7 @@
 import { ActivityIndicator, register } from '@vue-interface/activity-indicator';
 import Dots from '@vue-interface/activity-indicator/src/types/Dots';
 
-import FormControlMixin from '@vue-interface/form-control';
+import FormControl from '@vue-interface/form-control';
 
 const CUSTOM_SELECT_PREFIX = 'custom-select-';
 
@@ -68,12 +68,12 @@ export default {
     },
 
     mixins: [
-        FormControlMixin
+        FormControl
     ],
 
     props: {
         /**
-         * The default class name assigned to the control element
+         * The default class name assigned to the control element.
          *
          * @param {String}
          * @default 'form-select'
@@ -81,16 +81,27 @@ export default {
         defaultControlClass: {
             type: String,
             default: 'form-select'
+        },
+
+        /**
+         * The legacy class name.
+         *
+         * @param {String}
+         * @default 'form-control'
+         */
+        legacyControlClass: {
+            type: String,
+            default: 'custom-select'
         }   
     },
 
     computed: {
 
         controlClass() {
-            const controlClass = this.custom
-                ? 'custom-select'
-                : this.defaultControlClass;
-            
+            const controlClass = this.custom ? 'custom-select' : (
+                this.legacy ? this.legacyControlClass : this.defaultControlClass
+            );
+
             return this.plaintext ? `${controlClass}-plaintext` : controlClass;
         },
 
@@ -116,6 +127,70 @@ export default {
 /* For IE10 */
 .has-activity select::-ms-expand {
     display: none;
+}
+
+.select-field,
+.select-field .form-group-inner {
+    position: relative;
+    transition: all .25s ease-in-out;
+}
+
+.select-field .activity-indicator {
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translate(-1rem, -50%);
+    transition: all .15s ease-in;
+}
+
+.select-field .activity-indicator-xs {
+    font-size: .5em;
+}
+
+.select-field .activity-indicator-sm {
+    font-size: .5em;
+}
+
+.select-field .activity-indicator-md {
+    font-size: .666em;
+}
+
+.select-field .activity-indicator-lg {
+    font-size: .75em;
+}
+
+.select-field .activity-indicator-xl {
+    font-size: 1em;
+}
+
+.select-field .activity-indicator {
+    opacity: 1;
+}
+
+.select-field .select-field-fade-enter,
+.select-field .select-field-fade-leave-to {
+    opacity: 0;
+}
+
+.select-field.is-valid .valid-feedback,
+.select-field.is-invalid .invalid-feedback {
+    display: flex;
+}
+
+.select-field .form-control-icon {
+    padding-left: 2em;
+}
+
+.select-field .form-group-inner-icon {
+    position: absolute;
+    top: 50%;
+    left: .666rem;
+    width: 1rem;
+    font-size: 1rem;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 </style>
 

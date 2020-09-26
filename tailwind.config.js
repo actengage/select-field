@@ -15,5 +15,8 @@ module.exports = {
     },
     plugins: [
         require('@vue-interface/form-control/tailwindcss'),
+        require('@vue-interface/form-control/tailwindcss/form-control'),
+        require('@vue-interface/form-control/tailwindcss/form-select'),
+        require('@vue-interface/form-control/tailwindcss/custom-fields'),
     ]
 };
