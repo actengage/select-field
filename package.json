@@ -1,6 +1,6 @@
 {
   "name": "@vue-interface/select-field",
-  "version": "0.9.10",
+  "version": "0.9.11",
   "description": "A Vue select field component.",
   "main": "./index.js",
   "scripts": {
