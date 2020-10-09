@@ -37,8 +37,8 @@
   },
   "homepage": "https://github.com/vue-interface/select-field/docs#readme",
   "dependencies": {
-    "@vue-interface/activity-indicator": "^0.10.9",
-    "@vue-interface/form-control": "^0.9.24",
+    "@vue-interface/activity-indicator": "^0.10.12",
+    "@vue-interface/form-control": "^0.9.26",
     "@vue-interface/tailwindcss": "^0.2.10",
     "core-js": "^3.6.4",
     "tailwindcss": "^1.8.12",
