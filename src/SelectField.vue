@@ -1,7 +1,7 @@
 <template>
     <div :class="formGroupClasses">
         <slot name="label">
-            <label v-if="label" ref="label" :for="$attrs.id" :class="labelClass" v-html="label" />
+            <label v-if="label" ref="label" :for="id" :class="labelClass" v-html="label" />
         </slot>
 
         <div class="form-group-inner">
@@ -13,8 +13,8 @@
                     ref="field"
                     v-bind-events
                     v-bind="controlAttributes"
-                    :value="value"
-                    @input="$emit('input', $event.target.value)">
+                    :value="currentValue"
+                    @input="onInput">
                     <slot />
                 </select>
             </slot>
@@ -50,10 +50,9 @@
 </template>
 
 <script>
-import { ActivityIndicator, register } from '@vue-interface/activity-indicator';
-import Dots from '@vue-interface/activity-indicator/src/types/Dots';
+import { ActivityIndicator, register, Dots } from '@vue-interface/activity-indicator';
 
-import FormControlMixin from '@vue-interface/form-control';
+import FormControl from '@vue-interface/form-control';
 
 const CUSTOM_SELECT_PREFIX = 'custom-select-';
 
@@ -70,7 +69,7 @@ export default {
     },
 
     mixins: [
-        FormControlMixin
+        FormControl
     ],
 
     props: {
