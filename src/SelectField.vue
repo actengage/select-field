@@ -1,7 +1,7 @@
 <template>
     <div :class="formGroupClasses">
         <slot name="label">
-            <label v-if="label" ref="label" :for="$attrs.id" :class="labelClass" v-html="label" />
+            <label v-if="label" ref="label" :for="id" :class="labelClass" v-html="label" />
         </slot>
 
         <div class="form-group-inner">
