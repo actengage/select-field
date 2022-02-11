@@ -4,181 +4,83 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>SelectField</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./dist/SelectField.css">
     </head>
     <body>
-        <div id="app" class="container">
-            <h1 class="mb-5">select-field</h1>
+        <div id="app" class="container mx-auto">
+            <h1 class="text-4xl mb-5">select-field</h1>
 
-            <h3>Basic Usage</h3>
+            <h2 class="text-2xl mb-3">Basic Usage</h2>
 
-            <select-field label="Regular Field">
-                <option value="">Select an option...</option>
+            <div class="bg-gray-100 p-3 mb-3">
+                Value: {{ value }}
+            </div>
+
+            <select-field v-model="value" label="Regular Field" name="field" class="mb-3">
+                <option value="1">Option 1</option>
+                <option value="2" selected>Option 2</option>
+                <option value="3">Option 3</option>
+            </select-field>
+
+            <select-field label="Some Label Here" help-text="This field uses an empty option for a label..." class="mb-3">
+                <option value="">This field shows the empty option by default.</option>
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>
             </select-field>
 
-            <select-field label="Descriptive Field" help-text="Some helpful text goes here.">
-                <option value="">Select an option...</option>
+            <select-field label="Some Label Here" help-text="Some helpful text goes here." class="mb-3">
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>
             </select-field>
 
-            <select-field label="Plaintext Field" plaintext>
-                <option value="">Select an option...</option>
+            <select-field label="Readonly Field" value="1" class="mb-3" readonly>
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>
             </select-field>
 
-            <select-field label="Readonly Field" readonly>
-                <option value="">Select an option...</option>
+            <select-field label="Disabled Field" disabled>
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>
             </select-field>
             
-            <h3>Custom Fields</h3>
+            <h2 class="text-2xl mt-6 mb-3">Sizes</h2>
 
-            <select-field label="Custom Field" placeholder="Custom Field" custom>
+            <select-field size="sm" label="Small" class="mb-3">
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>
             </select-field>
 
-            <select-field label="Custom Field" placeholder="Custom Field" custom>
-                <option value="">Select an option...</option>
+            <select-field size="md" label="Medium" class="mb-3">
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>
             </select-field>
 
-            <select-field label="Custom Field" placeholder="Custom Field" error="test" custom>
+            <select-field size="lg" label="Large" class="mb-3">
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>
             </select-field>
 
-            <hr>
+            <h2 class="text-2xl mt-6 mb-3">Activity Indicator</h2>
 
-            <h3>Sizes</h3>
-
-            <div class="row">
-
-                <div class="col-sm-6">
-
-                    <h5>Regular Field</h5>
-
-                    <select-field size="sm">
-                        <option value="">Small</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                    </select-field>
-
-                    <select-field size="md">
-                        <option value="">Medium</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                    </select-field>
-
-                    <select-field size="lg">
-                        <option value="">Large</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                    </select-field>
-
-                </div>
-
-                <div class="col-sm-6">
-
-                    <h5>Custom Field</h5>
-
-                    <select-field label="Small" placeholder="Small" size="sm" custom>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                    </select-field>
-
-                    <select-field custom label="Medium" placeholder="Medium">
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                    </select-field>
-
-                    <select-field custom label="Large" placeholder="Large" size="lg">
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                    </select-field>
-
-                </div>
-
-            </div>
-
-            <hr>
-
-            <h3>Colors</h3>
-
-            <select-field value="primary" text-white bg-primary>
-                <option value="primary">Primary</option>
-            </select-field>
-
-            <select-field value="secondary" text-white bg-secondary>
-                <option value="secondary">Secondary</option>
-            </select-field>
-
-            <select-field value="success" text-white bg-success>
-                <option value="success">Success</option>
-            </select-field>
-
-            <select-field value="danger" text-white bg-danger>
-                <option value="danger">Danger</option>
-            </select-field>
-
-            <select-field value="warning" text-white bg-warning>
-                <option value="warning">Warning</option>
-            </select-field>
-
-            <select-field value="info" text-white bg-info>
-                <option value="info">Info</option>
-            </select-field>
-
-            <select-field value="dark" text-light bg-dark>
-                <option value="dark">Dark</option>
-            </select-field>
-
-            <select-field value="muted" text-dark bg-muted>
-                <option value="muted">Muted</option>
-            </select-field>
-
-            <select-field value="white" text-dark bg-white>
-                <option value="white">White</option>
-            </select-field>
-
-            <h2>Activity Indicator</h2>
-
-            <select-field label="Small" size="sm" :activity="showActivity">
-                <option value="">Select an option...</option>
+            <select-field label="Small" size="sm" indicator="dots" :activity="showActivity" class="mb-3">
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>
             </select-field>
 
-            <select-field label="Medium" size="md" :activity="showActivity">
-                <option value="">Select an option...</option>
+            <select-field label="Medium" size="md" indicator="pulse" :activity="showActivity" class="mb-3">
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>
             </select-field>
 
-            <select-field label="Large" size="lg" :activity="showActivity">
-                <option value="">Select an option...</option>
+            <select-field label="Large" size="lg" :activity="showActivity" class="mb-3">
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>
@@ -188,19 +90,33 @@
                 <span v-if="!showActivity">Show</span><span v-else>Hide</span> Activity
             </button>
 
-            <hr>
+            <h2 class="text-2xl mt-6 mb-3">Validation</h2>
 
-            <h3>Validation</h3>
+            <select-field label="Empty Array of Errors" :errors="[]" class="mb-3">
+                <option>Option 1</option>
+            </select-field>
 
-            <select-field label="Single Inline Error" error="This is an inline error."></select-field>
+            <select-field label="Single Inline Error" error="This is an inline error." class="mb-3"></select-field>
 
-            <select-field name="test" label="Multiple Errors From Object" :errors="{'test': ['This is an inline error #1.', 'This is an inline error #2.']}"></select-field>
-        </div>
+            <select-field label="Array of Errors" :errors="['First Error', 'Second Error']" class="mb-3"></select-field>
 
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
-        <script type="text/javascript" src="./dist/SelectField.umd.js"></script>
-        <script type="text/javascript">
-            const SelectField = window.SelectField;
+            <select-field name="test" label="Multiple Errors From Object" :errors="{'test': ['This is an inline error #1.', 'This is an inline error #2.']}" class="mb-3"></select-field>
+        </div>  
+
+        <script type="module">
+            import './index.css';
+            import Vue from 'vue/dist/vue';
+            import { SelectField } from './index.js';
+            import { register, registry, Dots, Pulse, Spinner } from '@vue-interface/activity-indicator';
+            
+            register({
+                Dots,
+                Pulse,
+                Spinner
+            });
+            
+            Vue.config.devtools = false;
+            Vue.config.productionTip = false;
 
             const vue = new Vue({
                 el: '#app',
@@ -209,8 +125,8 @@
                 },
                 data() {
                     return {
-                        value: null,
-                        showActivity: false
+                        showActivity: false,
+                        value: null
                     };
                 }
             });
