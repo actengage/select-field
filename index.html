@@ -108,7 +108,12 @@
             import Vue from 'vue/dist/vue';
             import { SelectField } from './index.js';
             import { register, registry, Dots, Pulse, Spinner } from '@vue-interface/activity-indicator';
-            
+            import { config } from '@vue-interface/form-control';
+
+            config({
+                animated: true
+            });
+                        
             register({
                 Dots,
                 Pulse,
