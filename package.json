@@ -7,7 +7,7 @@
     "dist",
     "src"
   ],
-  "main": "./dist/input-field.umd.js",
+  "main": "./dist/select-field.umd.js",
   "module": "./index.js",
   "browserslist": "last 2 versions, > 0.5%, ie >= 11",
   "scripts": {
