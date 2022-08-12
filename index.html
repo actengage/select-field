@@ -15,19 +15,19 @@
                 Value: {{ value }}
             </div>
 
-            <select-field v-model="value" label="Regular Field" name="field" class="mb-3">
+            <select-field v-model="value" label="Regular Field" class="mb-3">
                 <option value="1">Option 1</option>
                 <option value="2" selected>Option 2</option>
                 <option value="3">Option 3</option>
             </select-field>
 
-            <select-field label="Some Label Here" help-text="This field uses an empty option for a label..." class="mb-3">
+            <!-- <select-field label="Some Label Here" help-text="This field uses an empty option for a label..." class="mb-3">
                 <option value="">This field shows the empty option by default.</option>
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>
             </select-field>
-
+m
             <select-field label="Some Label Here" help-text="Some helpful text goes here." class="mb-3">
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
@@ -100,12 +100,12 @@
 
             <select-field label="Array of Errors" :errors="['First Error', 'Second Error']" class="mb-3"></select-field>
 
-            <select-field name="test" label="Multiple Errors From Object" :errors="{'test': ['This is an inline error #1.', 'This is an inline error #2.']}" class="mb-3"></select-field>
+            <select-field name="test" label="Multiple Errors From Object" :errors="{'test': ['This is an inline error #1.', 'This is an inline error #2.']}" class="mb-3"></select-field> -->
         </div>  
 
         <script type="module">
             import './index.css';
-            import Vue from 'vue/dist/vue';
+            import { createApp } from 'vue/dist/vue.esm-bundler.js';
             import { SelectField } from './index.js';
             import { register, registry, Dots, Pulse, Spinner } from '@vue-interface/activity-indicator';
             import { config } from '@vue-interface/form-control';
@@ -120,21 +120,19 @@
                 Spinner
             });
             
-            Vue.config.devtools = false;
-            Vue.config.productionTip = false;
-
-            const vue = new Vue({
-                el: '#app',
+            const vue = createApp({
                 components: {
                     SelectField
                 },
                 data() {
                     return {
                         showActivity: false,
-                        value: null
+                        value: undefined
                     };
                 }
             });
+
+            vue.mount('#app');
         </script>
     </body>
 </html>

@@ -11,16 +11,16 @@
         </slot>
 
         <div class="form-group-inner">
-            <slot name="control">
+            <slot name="control" :bind-events="bindEvents" :control-attributes="controlAttributes" :focus="focus">
                 <div v-if="$slots.icon" class="form-group-inner-icon" @click="focus">
                     <slot name="icon" />
                 </div>
                 <select
                     ref="field"
                     v-bind-events
-                    v-bind="Object.assign({['disabled']: $attrs.readonly}, controlAttributes)"
-                    :value="currentValue"
-                    @input="onInput">
+                    v-bind="Object.assign({
+                        ['disabled']: $attrs.readonly
+                    }, controlAttributes)">
                     <slot />
                 </select>
             </slot>
@@ -62,7 +62,6 @@
 import { ActivityIndicator } from '@vue-interface/activity-indicator';
 import { FormControl } from '@vue-interface/form-control';
 
-
 export default {
 
     name: 'SelectField',
@@ -98,14 +97,14 @@ export default {
     },
 
     mounted() {
-        const selected = this.$el.querySelector('[selected]');
+        // const selected = this.$el.querySelector('[selected]');
 
-        if(selected) {
-            this.currentValue = selected.value;
+        // if(selected) {
+        //     this.currentValue = selected.value;
 
-            this.$emit('input', this.currentValue);
-            this.$emit('update:value', this.currentValue);
-        }
+        //     this.$emit('input', this.currentValue);
+        //     this.$emit('update:value', this.currentValue);
+        // }
     },
 
     methods: {
