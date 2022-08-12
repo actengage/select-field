@@ -96,17 +96,6 @@ export default {
         },
     },
 
-    mounted() {
-        // const selected = this.$el.querySelector('[selected]');
-
-        // if(selected) {
-        //     this.currentValue = selected.value;
-
-        //     this.$emit('input', this.currentValue);
-        //     this.$emit('update:value', this.currentValue);
-        // }
-    },
-
     methods: {
         shouldChangeOnFocus() {
             return false;
