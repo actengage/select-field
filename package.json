@@ -3,12 +3,20 @@
   "version": "1.0.0-beta.0",
   "description": "A Vue select field component.",
   "files": [
-    "index.js",
-    "dist",
-    "src"
+    "dist"
   ],
   "main": "./dist/select-field.umd.js",
-  "module": "./index.js",
+  "module": "./dist/select-field.js",
+  "style": "./dist/style.css",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/select-field.js",
+      "require": "./dist/select-field.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
   "browserslist": "last 2 versions, > 0.5%, ie >= 11",
   "scripts": {
     "dev": "vite",
@@ -46,18 +54,19 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-babel": "^6.0.3",
     "@vitejs/plugin-vue": "^3.0.1",
     "autoprefixer": "^10.4.2",
     "babel-eslint": "^10.1.0",
     "babel-preset-vue": "^2.0.2",
     "change-case": "^4.1.2",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
+    "eslint": "^8.29.0",
+    "eslint-plugin-vue": "^9.8.0",
     "pascalcase": "^2.0.0",
     "postcss": "^8.4.6",
     "tailwindcss": "^3.0.18",
     "vite": "^3.0.0",
+    "vite-plugin-dts": "^1.7.1",
     "vue": "^3.2.37"
   }
 }

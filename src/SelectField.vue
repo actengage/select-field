@@ -1,3 +1,51 @@
+<script lang="ts">
+import { ActivityIndicator } from '@vue-interface/activity-indicator';
+import { FormControl } from '@vue-interface/form-control';
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+
+    name: 'SelectField',
+
+    components: {
+        ActivityIndicator,
+    },
+
+    mixins: [
+        FormControl
+    ],
+
+    props: {
+        /**
+         * The default class name assigned to the control element
+         *
+         * @param {String}
+         * @default 'form-select'
+         */
+        defaultControlClass: {
+            type: String,
+            default: 'form-select'
+        }   
+    },
+
+    computed: {
+
+        controlClass() {
+            return this.plaintext ?
+                `${this.defaultControlClass}-plaintext`
+                : this.defaultControlClass;
+        },
+    },
+
+    methods: {
+        shouldChangeOnFocus() {
+            return false;
+        }
+    }
+
+});
+</script>
+
 <template>
     <div :class="formGroupClasses">
         <slot name="label">
@@ -57,53 +105,6 @@
         </slot>
     </div>
 </template>
-
-<script>
-import { ActivityIndicator } from '@vue-interface/activity-indicator';
-import { FormControl } from '@vue-interface/form-control';
-
-export default {
-
-    name: 'SelectField',
-
-    components: {
-        ActivityIndicator,
-    },
-
-    mixins: [
-        FormControl
-    ],
-
-    props: {
-        /**
-         * The default class name assigned to the control element
-         *
-         * @param {String}
-         * @default 'form-select'
-         */
-        defaultControlClass: {
-            type: String,
-            default: 'form-select'
-        }   
-    },
-
-    computed: {
-
-        controlClass() {
-            return this.plaintext ?
-                `${this.defaultControlClass}-plaintext`
-                : this.defaultControlClass;
-        },
-    },
-
-    methods: {
-        shouldChangeOnFocus() {
-            return false;
-        }
-    }
-
-};
-</script>
 
 <style>
 .select-field,
