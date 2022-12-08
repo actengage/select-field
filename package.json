@@ -5,6 +5,7 @@
   "files": [
     "dist"
   ],
+  "type": "module",
   "main": "./dist/select-field.umd.js",
   "module": "./dist/select-field.js",
   "style": "./dist/style.css",
