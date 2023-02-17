@@ -11,9 +11,7 @@ export default defineComponent({
         ActivityIndicator,
     },
 
-    mixins: [
-        FormControl
-    ],
+    extends: FormControl,
 
     props: {
         /**
@@ -22,7 +20,7 @@ export default defineComponent({
          * @param {String}
          * @default 'form-select'
          */
-        defaultControlClass: {
+        formControlClass: {
             type: String,
             default: 'form-select'
         }   
@@ -54,17 +52,24 @@ export default defineComponent({
                 ref="label"
                 :for="id"
                 :class="labelClass"
-                @click="focus"
-                v-html="label" />
+                @click="focus">
+                {{ label }}
+            </label>
         </slot>
 
         <div class="form-group-inner">
-            <slot name="control" :bind-events="bindEvents" :control-attributes="controlAttributes" :focus="focus">
-                <div v-if="$slots.icon" class="form-group-inner-icon" @click="focus">
+            <slot
+                name="control"
+                v-bind="{ bindEvents, controlAttributes }">
+                <div
+                    v-if="$slots.icon"
+                    class="form-group-inner-icon"
+                    @click="focus">
                     <slot name="icon" />
                 </div>
                 <select
                     ref="field"
+                    v-model="currentValue"
                     v-bind-events
                     v-bind="Object.assign({
                         ['disabled']: $attrs.readonly
@@ -99,7 +104,9 @@ export default defineComponent({
         </slot>
 
         <slot name="help">
-            <small v-if="helpText" ref="help">
+            <small
+                v-if="helpText"
+                ref="help">
                 {{ helpText }}
             </small>
         </slot>
