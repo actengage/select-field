@@ -51,8 +51,7 @@ export default defineComponent({
                 v-if="label"
                 ref="label"
                 :for="id"
-                :class="labelClass"
-                @click="focus">
+                :class="labelClass">
                 {{ label }}
             </label>
         </slot>
