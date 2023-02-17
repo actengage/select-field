@@ -68,7 +68,7 @@ export default defineComponent({
                 </div>
                 <select
                     ref="field"
-                    v-model="currentValue"
+                    v-model="model"
                     v-bind-events
                     v-bind="Object.assign({
                         ['disabled']: $attrs.readonly
