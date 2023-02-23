@@ -42,15 +42,15 @@
     "url": "https://github.com/vue-interface/select-field/issues"
   },
   "homepage": "https://github.com/vue-interface/select-field/docs#readme",
-  "dependencies": {
-    "@vue-interface/activity-indicator": "^2.0.0-beta.0",
-    "@vue-interface/form-control": "^1.0.0-beta.0"
-  },
   "peerDependencies": {
+    "@vue-interface/activity-indicator": "^2.0.0-beta.0",
+    "@vue-interface/form-control": "^1.0.0-beta.0",
     "vue": "^3.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
+    "@vue-interface/activity-indicator": "^2.0.0-beta.0",
+    "@vue-interface/form-control": "^1.0.0-beta.0",
     "autoprefixer": "^10.4.2",
     "change-case": "^4.1.2",
     "eslint": "^8.29.0",
