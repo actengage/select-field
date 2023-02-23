@@ -42,24 +42,24 @@
     "url": "https://github.com/vue-interface/select-field/issues"
   },
   "homepage": "https://github.com/vue-interface/select-field/docs#readme",
+  "dependencies": {
+    "@vue-interface/activity-indicator": "workspace:2.0.0-beta.11",
+    "@vue-interface/form-control": "workspace:1.0.0-beta.15"
+  },
   "peerDependencies": {
-    "@vue-interface/activity-indicator": "^2.0.0-beta.0",
-    "@vue-interface/form-control": "^1.0.0-beta.0",
     "vue": "^3.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
-    "@vue-interface/activity-indicator": "^2.0.0-beta.0",
-    "@vue-interface/form-control": "^1.0.0-beta.0",
-    "autoprefixer": "^10.4.2",
+    "autoprefixer": "^10.4.13",
     "change-case": "^4.1.2",
-    "eslint": "^8.29.0",
-    "eslint-plugin-vue": "^9.8.0",
+    "eslint": "^8.34.0",
+    "eslint-plugin-vue": "^9.9.0",
     "pascalcase": "^2.0.0",
-    "postcss": "^8.4.6",
-    "tailwindcss": "^3.0.18",
-    "vite": "^4.0.0",
-    "vite-plugin-dts": "^1.7.1",
-    "vue": "^3.2.37"
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7",
+    "vite": "^4.1.4",
+    "vite-plugin-dts": "^1.7.3",
+    "vue": "^3.2.47"
   }
 }
