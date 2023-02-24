@@ -27,17 +27,10 @@ export default defineComponent({
     },
 
     computed: {
-
         controlClass() {
             return this.plaintext ?
-                `${this.defaultControlClass}-plaintext`
-                : this.defaultControlClass;
-        },
-    },
-
-    methods: {
-        shouldChangeOnFocus() {
-            return false;
+                `${this.formControlClass}-plaintext`
+                : this.formControlClass;
         }
     }
 
