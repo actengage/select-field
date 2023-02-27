@@ -3,9 +3,7 @@
   "version": "1.0.0-beta.0",
   "description": "A Vue select field component.",
   "files": [
-    "index.js",
-    "dist",
-    "src"
+    "dist"
   ],
   "main": "./dist/select-field.umd.js",
   "module": "./index.js",
