@@ -1,22 +1,28 @@
 {
   "name": "@vue-interface/select-field",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0-beta.7",
   "description": "A Vue select field component.",
   "files": [
     "dist"
   ],
+  "type": "module",
   "main": "./dist/select-field.umd.js",
-  "module": "./index.js",
+  "module": "./dist/select-field.js",
+  "style": "./dist/style.css",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/select-field.js",
+      "require": "./dist/select-field.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
   "browserslist": "last 2 versions, > 0.5%, ie >= 11",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "pre-release": "npm run build; git add . -A; git commit -m 'pre-release commit'",
-    "release-patch": "npm run pre-release && npm version patch -m \"%s\" && npm run release;",
-    "release-minor": "npm run pre-release && npm version minor -m \"%s\" && npm run release;",
-    "release-major": "npm run pre-release && npm version major -m \"%s\" && npm run release;",
-    "release": "git add . -A; git commit; git push --tags origin; npm publish;"
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -37,25 +43,23 @@
   },
   "homepage": "https://github.com/vue-interface/select-field/docs#readme",
   "dependencies": {
-    "@vue-interface/activity-indicator": "^2.0.0-beta.0",
-    "@vue-interface/form-control": "^1.0.0-beta.0"
+    "@vue-interface/activity-indicator": "^2.0.0-beta.11",
+    "@vue-interface/form-control": "^1.0.0-beta.15"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@rollup/plugin-babel": "^5.3.0",
-    "@vitejs/plugin-vue": "^3.0.1",
-    "autoprefixer": "^10.4.2",
-    "babel-eslint": "^10.1.0",
-    "babel-preset-vue": "^2.0.2",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "autoprefixer": "^10.4.13",
     "change-case": "^4.1.2",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
+    "eslint": "^8.34.0",
+    "eslint-plugin-vue": "^9.9.0",
     "pascalcase": "^2.0.0",
-    "postcss": "^8.4.6",
-    "tailwindcss": "^3.0.18",
-    "vite": "^3.0.0",
-    "vue": "^3.2.37"
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7",
+    "vite": "^4.1.4",
+    "vite-plugin-dts": "^1.7.3",
+    "vue": "^3.2.47"
   }
 }
