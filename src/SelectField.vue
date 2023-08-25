@@ -73,11 +73,11 @@ export default defineComponent({
             <slot name="activity">
                 <Transition name="select-field-fade">
                     <ActivityIndicator
-                        v-if="activity"
+                        v-if="activity && indicator"
                         key="activity"
                         ref="activity"
                         :type="indicator"
-                        :size="indicatorSize || size" />
+                        :size="indicatorSize" />
                 </Transition>
             </slot>
         </div>
@@ -123,125 +123,3 @@ export default defineComponent({
         </slot>
     </div>
 </template>
-
-<style>
-.select-field,
-.select-field .form-group-inner {
-    position: relative;
-    transition: all .25s ease-in-out;
-}
-
-.select-field .activity-indicator {
-    position: absolute;
-    right: 1.25em;
-    top: 50%;
-    transform: translate(-1rem, -50%);
-    transition: all .15s ease-in;
-}
-
-.select-field .activity-indicator-xs {
-    font-size: .5em;
-    right: 2em;
-}
-
-.select-field.has-activity .form-control-xs {
-    padding-right: 3.75em;
-}
-
-.select-field .activity-indicator-sm {
-    font-size: .5em;
-    right: 2em;
-}
-
-.select-field.has-activity .form-control-sm {
-    padding-right: 3em;
-}
-
-.select-field .activity-indicator-md {
-    font-size: .666em;
-}
-
-.select-field.has-activity .form-control-md {
-    padding-right: 3em;
-}
-
-.select-field .activity-indicator-lg {
-    font-size: .75em;
-}
-
-.select-field.has-activity .form-control-lg {
-    padding-right: 3em;
-}
-
-.select-field .activity-indicator-xl {
-    font-size: 1em;
-}
-
-.select-field.has-activity .activity-indicator-xl ~ .form-control-xl {
-    padding-right: 3.75em;
-}
-
-.select-field .activity-indicator {
-    opacity: 1;
-}
-
-.select-field .select-field-fade-enter,
-.select-field .select-field-fade-leave-to {
-    opacity: 0;
-}
-
-.select-field.is-valid .valid-feedback,
-.select-field.is-invalid .invalid-feedback {
-    display: flex;
-}
-
-.select-field .form-control-icon {
-    padding-left: 2em;
-}
-
-.select-field .form-group-inner-icon {
-    position: absolute;
-    top: 50%;
-    left: .666em;
-    width: 1rem;
-    font-size: 1em;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.select-field-sm .form-group-inner-icon {
-    position: absolute;
-    top: 50%;
-    left: .666rem;
-    width: .75em;
-    font-size: 1.5em;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.select-field-lg .form-group-inner-icon {
-    position: absolute;
-    top: 50%;
-    left: .666rem;
-    width: 1.25em;
-    font-size: 1em;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.select-field .activity-indicator {
-    opacity: 1;
-}
-
-.select-field .select-field-fade-enter,
-.select-field .select-field-fade-leave-to {
-    opacity: 0;
-}
-</style>
-

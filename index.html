@@ -5,18 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>SelectField</title>
     </head>
-    <body>
+    <body class="dark:bg-neutral-900 dark:text-white">
         <div id="app" class="container mx-auto mb-6">
-            <div class="">
-                <h1 class="text-4xl mb-5">select-field</h1>
+            <h1 class="text-4xl mb-5">select-field</h1>
 
-                <div class="bg-gray-100 p-3 mb-3">
-                    Value: {{ value }}
-                </div>
+            <div class="bg-neutral-100 dark:bg-neutral-800 p-3 mb-3">
+                Value: {{ value }}
             </div>
 
-            <h2 class="text-2xl mb-3">Basic Usage</h2>
-            
             <select-field v-model="value" label="Regular Field" class="mb-3">
                 <option value="1">Option 1</option>
                 <option value="2" selected>Option 2</option>
@@ -66,6 +62,65 @@
                 <option value="3">Option 3</option>
             </select-field>
             
+            <h2 class="text-2xl mt-6 mb-3">Icons</h2>
+
+            <select-field label="Small Icon" size="sm" class="select-field mb-3">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <template #icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="stroke-black dark:stroke-white">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                      </svg>                      
+                </template>
+            </select-field>
+
+            <select-field label="Medium Icon" size="md" class="mb-3">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <template #icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="stroke-black dark:stroke-white">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                      </svg>                      
+                </template>
+            </select-field>
+
+            <select-field label="Large Icon" class="select-field-lg mb-3">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <template #icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="stroke-black dark:stroke-white">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                      </svg>                      
+                </template>
+            </select-field>
+
+            <h2 class="text-2xl mt-6 mb-3">Activity Indicator</h2>
+
+            <select-field label="Small" indicator="dots" indicator-size="xs" :activity="showActivity" class="mb-3 select-field-sm">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select-field>
+
+            <select-field label="Medium" indicator="pulse" :activity="showActivity" class="mb-3">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select-field>
+
+            <select-field label="Large" indicator="dots" indicator-size="md" :activity="showActivity" class="mb-3 select-field-lg">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select-field>
+
+            <button @click="showActivity = !showActivity">
+                <span v-if="!showActivity">Show</span><span v-else>Hide</span> Activity
+            </button>
+
             <h2 class="text-2xl mt-6 mb-3">Animated Labels</h2>
 
             <select-field v-model="value" class="mb-3" label="Some Label" animated>
@@ -80,30 +135,6 @@
                 <option value="3">Option 3</option>
             </select-field>
 
-            <h2 class="text-2xl mt-6 mb-3">Activity Indicator</h2>
-
-            <select-field label="Small" size="sm" indicator="dots" :activity="showActivity" class="mb-3">
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-            </select-field>
-
-            <select-field label="Medium" size="md" indicator="pulse" :activity="showActivity" class="mb-3">
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-            </select-field>
-
-            <select-field label="Large" size="lg" :activity="showActivity" class="mb-3">
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-            </select-field>
-
-            <button @click="showActivity = !showActivity">
-                <span v-if="!showActivity">Show</span><span v-else>Hide</span> Activity
-            </button>
-
             <h2 class="text-2xl mt-6 mb-3">Validation</h2>
 
             <select-field label="Empty Array of Errors" :errors="[]" class="mb-3">
@@ -115,7 +146,13 @@
             <select-field label="Array of Errors" :errors="['First Error', 'Second Error']" class="mb-3"></select-field>
 
             <select-field name="test" label="Multiple Errors From Object" :errors="{'test': ['This is an inline error #1.', 'This is an inline error #2.']}" class="mb-3"></select-field>
-        
+
+            <select-field label="Valid Field" valid class="mb-3"></select-field>
+
+            <select-field label="Valid Field with Feedback" valid feedback="This is some success message." class="mb-3"></select-field>
+            
+            <select-field label="Valid Field with Array of Feedback" valid :feedback="['This is some success message.', 'This is some success message.']" class="mb-3"></select-field>
+
         </div>  
 
         <script type="module">
