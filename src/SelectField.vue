@@ -1,12 +1,12 @@
 <script setup lang="ts" generic="T, V">
 import type { CheckedFormControlProps, FormControlSlots } from '@vue-interface/form-control';
 import { FormControlErrors, FormControlFeedback, useFormControl } from '@vue-interface/form-control';
-import { UnwrapRef, computed, ref, useSlots } from 'vue';
+import { ref, useSlots } from 'vue';
 
 defineSlots<FormControlSlots<T>>();
 
 const emit = defineEmits<{
-    (e: 'update:modelValue', value: UnwrapRef<T> | UnwrapRef<V>): void;
+    (e: 'update:modelValue', value: T): void;
 }>();
 
 const props = withDefaults(defineProps<CheckedFormControlProps<T, V>>(), {
@@ -14,27 +14,14 @@ const props = withDefaults(defineProps<CheckedFormControlProps<T, V>>(), {
     labelClass: 'form-label'
 });
 
-// We need to set the currentValue for select fields. When blurring a select
-// field without a v-model set, the value will be set to undefined when the
-// computed values change.
-const currentvalue = ref(props.modelValue ?? props.value);
-
-const model = computed({
-    get: () => currentvalue.value,
-    set(value) {
-        currentvalue.value = value;
-
-        emit('update:modelValue', value);
-    }
-});
-
 const {
     controlAttributes,
     formGroupClasses,
+    model,
     onClick,
     onBlur,
     onFocus
-} = useFormControl(props, emit, model);
+} = useFormControl<T,V>(props, emit);
 
 const field = ref<HTMLSelectElement>();
 
