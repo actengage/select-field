@@ -1,49 +1,59 @@
-<script lang="ts">
-import { ActivityIndicator } from '@vue-interface/activity-indicator';
-import { FormControl } from '@vue-interface/form-control';
-import { defineComponent } from 'vue';
+<script setup lang="ts" generic="T, V">
+import type { CheckedFormControlProps, FormControlSlots } from '@vue-interface/form-control';
+import { FormControlErrors, FormControlFeedback, useFormControl } from '@vue-interface/form-control';
+import { UnwrapRef, computed, ref, useSlots } from 'vue';
 
-export default defineComponent({
+defineSlots<FormControlSlots<T>>();
 
-    name: 'SelectField',
+const emit = defineEmits<{
+    (e: 'update:modelValue', value: UnwrapRef<T> | UnwrapRef<V>): void;
+}>();
 
-    components: {
-        ActivityIndicator,
-    },
-
-    extends: FormControl,
-
-    props: {
-        /**
-         * The default class name assigned to the control element
-         *
-         * @param {String}
-         * @default 'form-select'
-         */
-        formControlClass: {
-            type: String,
-            default: 'form-select'
-        }   
-    },
-
-    computed: {
-        controlClass() {
-            return this.plaintext ?
-                `${this.formControlClass}-plaintext`
-                : this.formControlClass;
-        }
-    }
-
+const props = withDefaults(defineProps<CheckedFormControlProps<T, V>>(), {
+    formControlClass: 'form-select',
+    labelClass: 'form-label'
 });
+
+// We need to set the currentValue for select fields. When blurring a select
+// field without a v-model set, the value will be set to undefined when the
+// computed values change.
+const currentvalue = ref(props.modelValue ?? props.value);
+
+const model = computed({
+    get: () => currentvalue.value,
+    set(value) {
+        currentvalue.value = value;
+
+        emit('update:modelValue', value);
+    }
+});
+
+const {
+    controlAttributes,
+    formGroupClasses,
+    onClick,
+    onBlur,
+    onFocus
+} = useFormControl(props, emit, model);
+
+const field = ref<HTMLSelectElement>();
+
+function onMousedown(e) {
+    onClick(e);
+
+    field.value.focus();
+}
 </script>
 
 <template>
-    <div :class="formGroupClasses">
+    <div
+        class="select-field"
+        :class="formGroupClasses">
         <slot name="label">
             <label
                 v-if="label"
                 ref="label"
-                :for="id"
+                :for="controlAttributes.id"
                 :class="labelClass">
                 {{ label }}
             </label>
@@ -52,20 +62,21 @@ export default defineComponent({
         <div class="form-group-inner">
             <slot
                 name="control"
-                v-bind="{ bindEvents, controlAttributes }">
+                v-bind="{ onClick, onBlur, onFocus, controlAttributes }">
                 <div
-                    v-if="$slots.icon"
+                    v-if="useSlots().icon"
                     class="form-group-inner-icon"
-                    @click="focus">
+                    @click="field.focus">
                     <slot name="icon" />
                 </div>
                 <select
                     ref="field"
                     v-model="model"
-                    v-bind-events
-                    v-bind="Object.assign({
-                        ['disabled']: $attrs.readonly
-                    }, controlAttributes)">
+                    class="form-select"
+                    v-bind="controlAttributes"
+                    @mousedown="onMousedown"
+                    @blur="onBlur"
+                    @focus="onFocus">
                     <slot />
                 </select>
             </slot>
@@ -87,9 +98,9 @@ export default defineComponent({
             v-bind="{ error, errors, id: $attrs.id, name: $attrs.name }">        
             <FormControlErrors
                 v-if="!!(error || errors)"
-                :id="$attrs.id"
+                :id="$attrs.id && String($attrs.id)"
                 v-slot="{ error }"
-                :name="$attrs.name"
+                :name="$attrs.name && String($attrs.name)"
                 :error="error"
                 :errors="errors">
                 <div
@@ -114,7 +125,9 @@ export default defineComponent({
             </FormControlFeedback>
         </slot>
 
-        <slot name="help">
+        <slot
+            name="help"
+            v-bind="{ helpText }">
             <small
                 v-if="helpText"
                 ref="help">
