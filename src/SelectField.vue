@@ -1,7 +1,7 @@
 <script setup lang="ts" generic="T, V">
 import type { CheckedFormControlProps, FormControlSlots } from '@vue-interface/form-control';
 import { FormControlErrors, FormControlFeedback, useFormControl } from '@vue-interface/form-control';
-import { ref, useSlots } from 'vue';
+import { onMounted, ref, useSlots } from 'vue';
 
 defineSlots<FormControlSlots<T>>();
 
@@ -21,7 +21,7 @@ const {
     onClick,
     onBlur,
     onFocus
-} = useFormControl<T,V>(props, emit);
+} = useFormControl<T,V>({ props, emit });
 
 const field = ref<HTMLSelectElement>();
 
@@ -30,6 +30,21 @@ function onMousedown(e) {
 
     field.value.focus();
 }
+
+// Check the option slots for selected options. If the field has hardcoded
+// selected options, this will ensure the value of the field is always set to
+// the property. This will ensure the model is updated to the selected value.
+onMounted(() => {
+    if(!useSlots().default) {
+        return;
+    }
+
+    for(const child of useSlots().default()) {
+        if('selected' in child.props && (child.props.value ?? child.children)) {
+            model.value = child.props.value ?? child.children;
+        }
+    }
+});
 </script>
 
 <template>

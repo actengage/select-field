@@ -15,32 +15,32 @@
 
             <select-field v-model="value" label="Regular Field" class="mb-3">
                 <option value="1">Option 1</option>
-                <option value="2" selected>Option 2</option>
+                <option value="2">Option 2</option>
                 <option value="3">Option 3</option>
             </select-field>
 
             <select-field label="Some Label Here" help-text="This field uses an empty option for a label..." class="mb-3">
                 <option value="">This field shows the empty option by default.</option>
                 <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
+                <option value="2" selected>Option 2</option>
                 <option value="3">Option 3</option>
             </select-field>
 
             <select-field label="Some Label Here" help-text="Some helpful text goes here." class="mb-3">
                 <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
+                <option value="2" selected>Option 2</option>
                 <option value="3">Option 3</option>
             </select-field>
 
             <select-field label="Readonly Field" value="1" class="mb-3" readonly>
                 <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
+                <option value="2" selected>Option 2</option>
                 <option value="3">Option 3</option>
             </select-field>
 
             <select-field label="Disabled Field" value="2" disabled>
                 <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
+                <option value="2" selected>Option 2</option>
                 <option value="3">Option 3</option>
             </select-field>
             
@@ -48,19 +48,19 @@
             
             <select-field label="Small" class="select-field-sm mb-3">
                 <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
+                <option value="2" selected>Option 2</option>
                 <option value="3">Option 3</option>
             </select-field>
             
             <select-field label="Medium" class="mb-3">
                 <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
+                <option value="2" selected>Option 2</option>
                 <option value="3">Option 3</option>
             </select-field>
             
             <select-field label="Large" class="select-field-lg mb-3">
                 <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
+                <option value="2" selected>Option 2</option>
                 <option value="3">Option 3</option>
             </select-field>
             
@@ -162,7 +162,7 @@
                 data() {
                     return {
                         showActivity: false,
-                        value: '2'
+                        value: undefined
                     };
                 }
             })
