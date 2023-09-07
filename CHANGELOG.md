@@ -1,3 +1,10 @@
+# [1.0.0-beta.15](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.14...v1.0.0-beta.15) (2023-09-07)
+
+
+### Bug Fixes
+
+* issue with new selected props feature ([6316298](https://github.com/vue-interface/select-field/commit/63162987850769733e650543bfe9c14d96a46a53))
+
 # [1.0.0-beta.14](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2023-09-07)
 
 
