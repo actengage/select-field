@@ -1,3 +1,10 @@
+# [1.0.0-beta.14](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2023-09-07)
+
+
+### Bug Fixes
+
+* issues with v-model ([758a5bf](https://github.com/vue-interface/select-field/commit/758a5bff5ae1215d34620063c2729fb854603fba))
+
 # [1.0.0-beta.13](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2023-09-01)
 
 
