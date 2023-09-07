@@ -40,6 +40,10 @@ onMounted(() => {
     }
 
     for(const child of useSlots().default()) {
+        if(!child.props) {
+            return;
+        }
+        
         if('selected' in child.props && (child.props.value ?? child.children)) {
             model.value = child.props.value ?? child.children;
         }
