@@ -1,3 +1,10 @@
+# [1.0.0-beta.16](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.15...v1.0.0-beta.16) (2023-09-10)
+
+
+### Bug Fixes
+
+* broken import in select fields ([f3b834a](https://github.com/vue-interface/select-field/commit/f3b834a4984d38b044b5a3eec44cd91e684fd1ad))
+
 # [1.0.0-beta.15](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.14...v1.0.0-beta.15) (2023-09-07)
 
 
