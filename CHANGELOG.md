@@ -1,3 +1,10 @@
+# [1.0.0-beta.17](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2023-09-12)
+
+
+### Bug Fixes
+
+* attr inheritance issues ([443aba6](https://github.com/vue-interface/select-field/commit/443aba6328362f61222d992fc96968cd332cd0a6))
+
 # [1.0.0-beta.16](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.15...v1.0.0-beta.16) (2023-09-10)
 
 
