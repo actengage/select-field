@@ -4,6 +4,10 @@ import type { CheckedFormControlProps, FormControlSlots } from '@vue-interface/f
 import { FormControlErrors, FormControlFeedback, useFormControl } from '@vue-interface/form-control';
 import { onMounted, ref, useSlots } from 'vue';
 
+defineOptions({
+    inheritAttrs: false
+});
+
 defineSlots<FormControlSlots<T>>();
 
 const emit = defineEmits<{
