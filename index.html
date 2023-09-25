@@ -164,6 +164,11 @@
                         showActivity: false,
                         value: undefined
                     };
+                },
+                mounted() {
+                    setTimeout(() => {
+                        this.value = '1';
+                    }, 1000)
                 }
             })
             .use(ActivityIndicatorPlugin, {
