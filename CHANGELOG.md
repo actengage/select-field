@@ -1,3 +1,11 @@
+# [1.0.0-beta.18](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2023-09-26)
+
+
+### Bug Fixes
+
+* updated deps ([729d6b9](https://github.com/vue-interface/select-field/commit/729d6b99a8be880c8edd6fe42f9b2ad5f4adcb79))
+* updated to new form-control ([89e6c59](https://github.com/vue-interface/select-field/commit/89e6c593a903ab5b43a240aa772d9b6720f466b9))
+
 # [1.0.0-beta.17](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2023-09-12)
 
 
