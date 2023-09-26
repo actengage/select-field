@@ -1,3 +1,10 @@
+# [1.0.0-beta.19](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2023-09-26)
+
+
+### Bug Fixes
+
+* updated tsconfig ([a2ff1a7](https://github.com/vue-interface/select-field/commit/a2ff1a72da056832e7d48a23234532c8cf95b5d3))
+
 # [1.0.0-beta.18](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2023-09-26)
 
 
