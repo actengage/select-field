@@ -1,3 +1,10 @@
+# [1.0.0-beta.20](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.19...v1.0.0-beta.20) (2024-01-29)
+
+
+### Bug Fixes
+
+* fix emit events ([ee90702](https://github.com/vue-interface/select-field/commit/ee90702ae1627901c5afa6f9e3e8f4ad9a8d4f0c))
+
 # [1.0.0-beta.19](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2023-09-26)
 
 
