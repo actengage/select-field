@@ -1,6 +1,6 @@
 <script setup lang="ts" generic="T, V">
 import { ActivityIndicator } from '@vue-interface/activity-indicator';
-import type { CheckedFormControlProps, FormControlSlots } from '@vue-interface/form-control';
+import type { CheckedFormControlProps, FormControlEvents, FormControlSlots } from '@vue-interface/form-control';
 import { FormControlErrors, FormControlFeedback, useFormControl } from '@vue-interface/form-control';
 import { onMounted, ref, useSlots } from 'vue';
 
@@ -10,9 +10,7 @@ defineOptions({
 
 defineSlots<FormControlSlots<T>>();
 
-const emit = defineEmits<{
-    (e: 'update:modelValue', value: T): void;
-}>();
+const emit = defineEmits<FormControlEvents<T>>();
 
 const props = withDefaults(defineProps<CheckedFormControlProps<T, V>>(), {
     formControlClass: 'form-select',
