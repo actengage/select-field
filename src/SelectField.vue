@@ -1,6 +1,6 @@
 <script setup lang="ts" generic="T, V">
 import { ActivityIndicator } from '@vue-interface/activity-indicator';
-import type { CheckedFormControlProps, FormControlEvents, FormControlSlots } from '@vue-interface/form-control';
+import type { FormControlEvents, FormControlProps, FormControlSlots } from '@vue-interface/form-control';
 import { FormControlErrors, FormControlFeedback, useFormControl } from '@vue-interface/form-control';
 import { onMounted, ref, useSlots } from 'vue';
 
@@ -12,7 +12,7 @@ defineSlots<FormControlSlots<T>>();
 
 const emit = defineEmits<FormControlEvents<T>>();
 
-const props = withDefaults(defineProps<CheckedFormControlProps<T, V>>(), {
+const props = withDefaults(defineProps<FormControlProps<T, V>>(), {
     formControlClass: 'form-select',
     labelClass: 'form-label'
 });
