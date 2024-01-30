@@ -1,3 +1,10 @@
+# [1.0.0-beta.21](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.20...v1.0.0-beta.21) (2024-01-30)
+
+
+### Bug Fixes
+
+* more typescript and bundling issues ([92dbd31](https://github.com/vue-interface/select-field/commit/92dbd31e5b8486a3cd761ed51a2c5b5d7365a78f))
+
 # [1.0.0-beta.20](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.19...v1.0.0-beta.20) (2024-01-29)
 
 
