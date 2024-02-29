@@ -104,12 +104,12 @@ onMounted(() => {
 
         <slot
             name="errors"
-            v-bind="{ error, errors, id: $attrs.id, name: $attrs.name }">        
+            v-bind="{ error, errors, id, name }">        
             <FormControlErrors
                 v-if="!!(error || errors)"
-                :id="$attrs.id && String($attrs.id)"
+                :id="id && String(id)"
                 v-slot="{ error }"
-                :name="$attrs.name && String($attrs.name)"
+                :name="name && String(name)"
                 :error="error"
                 :errors="errors">
                 <div
