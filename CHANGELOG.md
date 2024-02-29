@@ -1,3 +1,10 @@
+# [1.0.0-beta.22](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2024-02-29)
+
+
+### Bug Fixes
+
+* issue with field not showing laravel style errors ([de6b35b](https://github.com/vue-interface/select-field/commit/de6b35b7270deec04e65cd582237adbf1bb59008))
+
 # [1.0.0-beta.21](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.20...v1.0.0-beta.21) (2024-01-30)
 
 
