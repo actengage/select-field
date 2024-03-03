@@ -1,3 +1,10 @@
+# [1.0.0-beta.23](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2024-03-03)
+
+
+### Bug Fixes
+
+* sizing issues ([3a96d89](https://github.com/vue-interface/select-field/commit/3a96d8966b9a7b6883174b42a5cca605e3cc1dc5))
+
 # [1.0.0-beta.22](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2024-02-29)
 
 
