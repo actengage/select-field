@@ -81,7 +81,6 @@ onMounted(() => {
                 <select
                     ref="field"
                     v-model="model"
-                    class="form-select"
                     v-bind="controlAttributes"
                     @mousedown="onMousedown"
                     @blur="onBlur"
