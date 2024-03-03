@@ -13,14 +13,11 @@
                 Value: {{ value }}
             </div>
 
-            <div class="flex">
-                <div class="flex-1"></div>
-                <select-field v-model="value" label="Regular Field" class="mb-3" tabindex="1">
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                </select-field>
-            </div>
+            <select-field v-model="value" label="Regular Field" class="mb-3" tabindex="1">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select-field>
 
             <select-field label="Some Label Here" help-text="This field uses an empty option for a label..." class="mb-3">
                 <option value="">This field shows the empty option by default.</option>
