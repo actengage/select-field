@@ -1,3 +1,10 @@
+# [1.0.0-beta.24](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2024-05-23)
+
+
+### Bug Fixes
+
+* fixed issues with animated fields ([d0c2e46](https://github.com/vue-interface/select-field/commit/d0c2e4650292cd62bca2b56af798f98de8e2c599))
+
 # [1.0.0-beta.23](https://github.com/vue-interface/select-field/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2024-03-03)
 
 
